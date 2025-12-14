@@ -17,7 +17,9 @@ const Header: React.FC = () => {
     { name: 'Timeline', id: 'timeline' },
     { name: 'AI Pipeline', id: 'ai-pipeline' },
     { name: 'Music', id: 'music' },
+    { name: 'Visual Chronicles', id: 'visuals' },
     { name: 'Gaming', id: 'gaming' },
+    { name: 'Strange Loop', id: 'loop' },
   ];
 
   return (

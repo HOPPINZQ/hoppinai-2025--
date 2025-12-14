@@ -118,6 +118,21 @@ const MusicSection: React.FC = () => {
         className="relative w-full h-screen overflow-hidden bg-slate-950 text-white z-20"
     >
       
+      {/* Coherence Line */}
+      <div className="absolute top-0 left-6 md:left-10 w-px h-32 bg-gradient-to-b from-white/0 via-white/20 to-white/0 z-50"></div>
+
+      {/* Section Header */}
+      <div className="absolute top-0 left-0 w-full z-40 px-6 md:px-10 pt-24 pb-4 pointer-events-none">
+         <div className="flex justify-between items-end">
+            <div>
+               <h2 className="text-3xl md:text-5xl font-display font-bold text-white">
+                  Section 3: <span className="text-purple-400">Sonic Scapes</span>
+               </h2>
+               <p className="text-slate-400 mt-2 text-sm md:text-base">Audio Rhythm • 2025</p>
+            </div>
+         </div>
+      </div>
+
       {/* Top Gradient for Smooth Transition */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none"></div>
 

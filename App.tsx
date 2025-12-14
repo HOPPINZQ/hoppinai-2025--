@@ -4,9 +4,11 @@ import TimelineSection from './components/TimelineSection';
 import AIPipelineSection from './components/AIPipelineSection';
 import MusicSection from './components/MusicSection';
 import GamingSection from './components/GamingSection';
+import PhotoWallSection from './components/PhotoWallSection'; 
+import StrangeLoopSection from './components/StrangeLoopSection'; 
 import SnakeBackground from './components/SnakeBackground';
 import ScrollProgress from './components/ScrollProgress';
-import Header from './components/Header'; // New Import
+import Header from './components/Header';
 import { MEMORY_IMAGES, STAT_CARDS, TIMELINE_EVENTS } from './data';
 
 const App: React.FC = () => {
@@ -45,9 +47,19 @@ const App: React.FC = () => {
            <MusicSection />
         </div>
 
-        {/* New Gaming Section */}
+        {/* Visual Chronicles Section (Combines Time Shift & Showcase) */}
+        <div id="visuals" className="relative">
+           <PhotoWallSection />
+        </div>
+
+        {/* Gaming Section */}
         <div id="gaming" className="relative">
            <GamingSection />
+        </div>
+
+        {/* Strange Loop Section */}
+        <div id="loop" className="relative">
+           <StrangeLoopSection />
         </div>
 
       </div>

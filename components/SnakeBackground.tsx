@@ -127,6 +127,18 @@ const SnakeBackground: React.FC = () => {
             <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
           </linearGradient>
           
+          <linearGradient id="textGradStart" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#94a3b8" />
+            <stop offset="50%" stopColor="#e2e8f0" />
+            <stop offset="100%" stopColor="#64748b" />
+          </linearGradient>
+
+          <linearGradient id="textGradEnd" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#f472b6" />
+            <stop offset="50%" stopColor="#c084fc" />
+            <stop offset="100%" stopColor="#818cf8" />
+          </linearGradient>
+          
           <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
             <feMerge>
@@ -135,16 +147,45 @@ const SnakeBackground: React.FC = () => {
             </feMerge>
           </filter>
 
-          <filter id="text-glow">
-             <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#a855f7" />
+          <filter id="text-3d" x="-20%" y="-20%" width="140%" height="140%">
+             {/* Create a dark offset shadow for depth */}
+             <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.2" floodColor="#000" floodOpacity="0.8"/>
+             {/* Create a colored glow */}
+             <feDropShadow dx="0" dy="0" stdDeviation="1.5" floodColor="#a855f7" floodOpacity="0.4"/>
+             {/* Brighten the source slightly */}
+             <feComponentTransfer>
+                <feFuncR type="linear" slope="1.1"/>
+                <feFuncG type="linear" slope="1.1"/>
+                <feFuncB type="linear" slope="1.1"/>
+             </feComponentTransfer>
+          </filter>
+
+          <filter id="text-3d-end" x="-20%" y="-20%" width="140%" height="140%">
+             <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.2" floodColor="#000" floodOpacity="0.8"/>
+             <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#ec4899" floodOpacity="0.6"/>
           </filter>
         </defs>
 
-        <text x="50" y="15" textAnchor="middle" fontSize="6" fill="#cbd5e1" filter="url(#text-glow)" className="font-display font-bold opacity-60">
+        <text 
+          x="50" y="15" 
+          textAnchor="middle" 
+          fontSize="8" 
+          fill="url(#textGradStart)" 
+          filter="url(#text-3d)" 
+          className="font-display font-black tracking-[0.2em] opacity-80"
+          style={{ textShadow: '0px 0px 5px rgba(255,255,255,0.2)' }}
+        >
           START 2025
         </text>
 
-        <text x="50" y="390" textAnchor="middle" fontSize="10" fill="#ec4899" filter="url(#text-glow)" className="font-display font-bold opacity-90">
+        <text 
+          x="50" y="390" 
+          textAnchor="middle" 
+          fontSize="14" 
+          fill="url(#textGradEnd)" 
+          filter="url(#text-3d-end)" 
+          className="font-display font-black tracking-[0.15em] opacity-90"
+        >
           2026
         </text>
 
