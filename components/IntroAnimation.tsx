@@ -141,17 +141,23 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
 
       // Expand AI Text
       timeline.to(aiTextRef.current, {
-         scale: 50,
-         filter: 'blur(2px)',
+         scale: 15, // Reduced from 50 to avoid fullscreen overwhelm
          duration: 2.5,
-         ease: "power2.in"
+         ease: "power2.inOut"
       }, 2.5);
 
-      // Text turns to light
-      timeline.to('.ai-text-gradient', {
-         backgroundImage: 'linear-gradient(to right, #ffffff, #ffffff)',
+      // Text turns to light (Fade in white overlay)
+      timeline.to('.ai-text-white', {
+         opacity: 1,
          duration: 1.5
-      }, 3);
+      }, 2.5);
+
+      // Fade out at the end to prepare for next section
+      timeline.to(aiTextRef.current, {
+         opacity: 0,
+         filter: 'blur(10px)', // Gentle exit blur
+         duration: 1
+      }, 4);
       
     }, containerRef);
 
@@ -280,10 +286,15 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
             </div>
 
             {/* AI Text (Hidden initially) */}
-            <div ref={aiTextRef} className="absolute z-30 opacity-0 pointer-events-none flex items-center justify-center">
-               <span className="ai-text-gradient font-display font-black text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 filter drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">
-                 AI
-               </span>
+            <div ref={aiTextRef} className="absolute z-30 opacity-0 pointer-events-none flex items-center justify-center will-change-transform">
+               <div className="relative">
+                  <span className="ai-text-gradient font-display font-black text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 filter drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">
+                    AI
+                  </span>
+                  <span className="ai-text-white absolute inset-0 font-display font-black text-8xl md:text-9xl text-white opacity-0 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                    AI
+                  </span>
+               </div>
             </div>
             
         </div>
