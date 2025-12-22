@@ -4,48 +4,48 @@ import { Smartphone, Laptop, Trophy, Activity, Target, Sword, Crosshair, Box, He
 // --- DATA: DASHBOARD ---
 const GAMES = [
   {
-    id: 'lolm',
-    title: 'League of Legends: Wild Rift',
-    platform: 'Mobile',
-    icon: <Smartphone size={18} />,
-    rank: 'Grandmaster',
-    hours: '420h',
-    spent: '$120',
-    tags: ['MOBA', 'Strategy'],
-    image: 'https://picsum.photos/800/600?random=501' 
+    id: 'ac_odyssey',
+    title: "Assassin's Creed Odyssey",
+    platform: 'Steam',
+    icon: <Sword size={18} />,
+    rank: 'RPG',
+    hours: '29%',
+    spent: '71 Sessions',
+    tags: ['Open World', 'Historical'],
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_hero.jpg?t=1758656673' 
   },
   {
-    id: 'lol',
-    title: 'League of Legends',
-    platform: 'PC',
-    icon: <Laptop size={18} />,
-    rank: 'Diamond II',
-    hours: '8,400h',
-    spent: '$1,500',
-    tags: ['Competitive', 'Esports'],
-    image: 'https://picsum.photos/800/600?random=502'
+    id: 'cs2',
+    title: 'Counter-Strike 2',
+    platform: 'Steam',
+    icon: <Crosshair size={18} />,
+    rank: 'FPS',
+    hours: '22%',
+    spent: '383 Sessions',
+    tags: ['Competitive', 'Tactical'],
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_hero.jpg?t=1749053861'
   },
   {
-    id: 'dota2',
-    title: 'DOTA 2',
-    platform: 'PC',
-    icon: <Laptop size={18} />,
-    rank: 'Ancient 4',
-    hours: '2,100h',
-    spent: '$850',
-    tags: ['Strategy', 'Hardcore'],
-    image: 'https://picsum.photos/800/600?random=503'
+    id: 'stellar_blade',
+    title: 'Stellar Blade',
+    platform: 'Steam',
+    icon: <Sword size={18} />,
+    rank: 'Action',
+    hours: '6%',
+    spent: '18 Sessions',
+    tags: ['Hack & Slash', 'Sci-Fi'],
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3489700/7f886b630308135ac990fefd005787729fec685f/library_hero.jpg?t=1763566418'
   },
   {
-    id: 'csgo2',
-    title: 'CS:GO 2',
-    platform: 'PC',
-    icon: <Laptop size={18} />,
-    rank: 'Global Elite',
-    hours: '1,500h',
-    spent: '$3,200',
-    tags: ['FPS', 'Tactical'],
-    image: 'https://picsum.photos/800/600?random=504'
+    id: 'lies_of_p',
+    title: 'Lies of P',
+    platform: 'Steam',
+    icon: <Sword size={18} />,
+    rank: 'Soulslike',
+    hours: '5%',
+    spent: '10 Sessions',
+    tags: ['Dark Fantasy', 'RPG'],
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1627720/library_hero.jpg?t=1764565054'
   }
 ];
 
@@ -53,48 +53,48 @@ const GAMES = [
 const SLIDES = [
   {
     id: 1,
-    image: "https://picsum.photos/1600/2000?random=901",
-    title: "The Perfect Frame",
-    subtitle: "Aperture Mode",
-    meta: "f/1.4 • ISO 100",
+    image: "https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_hero.jpg?t=1758656673",
+    title: "The Odyssey",
+    subtitle: "Ancient Greece",
+    meta: "29% Playtime",
     icon: <Aperture size={20} />,
-    description: "Capturing the stillness before the battle. The lighting engine in Cyberpunk 2077 creates moments that rival reality."
+    description: "Exploring the vast open world of Ancient Greece. A journey of 71 sessions through history and myth."
   },
   {
     id: 2,
-    image: "https://picsum.photos/1600/2000?random=902",
-    title: "High Velocity",
-    subtitle: "Shutter Mode",
-    meta: "1/2000s • ISO 800",
+    image: "https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3489700/7f886b630308135ac990fefd005787729fec685f/library_hero.jpg?t=1763566418",
+    title: "Stellar Blade",
+    subtitle: "Action Mode",
+    meta: "6% Playtime",
     icon: <Zap size={20} />,
-    description: "Freezing the chaos of a drift turn in Forza Horizon. Speed is just a number when time stands still."
+    description: "Fast-paced combat and stunning visuals. One of the top highlights of the year."
   },
   {
     id: 3,
-    image: "https://picsum.photos/1600/2000?random=903",
-    title: "Virtual Photographer",
-    subtitle: "Manual Control",
-    meta: "RAW • 4K Capture",
+    image: "https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1627720/library_hero.jpg?t=1764565054",
+    title: "Lies of P",
+    subtitle: "Dark Fantasy",
+    meta: "5% Playtime",
     icon: <Camera size={20} />,
-    description: "Using the in-game photo mode to compose art. From framing to post-processing, every shot tells a story of the virtual world."
+    description: "A dark retelling of a classic tale. Mastering the art of parrying in a soulslike masterpiece."
   }
 ];
 
 // --- DATA: STEAM ---
 const STEAM_PLAYTIME = [
-  { id: '1', title: 'Elden Ring', hours: 450, span: 'md:col-span-2 md:row-span-2', image: 'https://picsum.photos/800/800?random=601' },
-  { id: '2', title: 'Baldur\'s Gate 3', hours: 320, span: 'md:col-span-1 md:row-span-2', image: 'https://picsum.photos/400/800?random=602' },
-  { id: '3', title: 'Hollow Knight', hours: 120, span: 'md:col-span-1 md:row-span-1', image: 'https://picsum.photos/400/400?random=603' },
-  { id: '4', title: 'Stardew Valley', hours: 200, span: 'md:col-span-1 md:row-span-1', image: 'https://picsum.photos/400/400?random=604' },
-  { id: '5', title: 'Cyberpunk 2077', hours: 180, span: 'md:col-span-2 md:row-span-1', image: 'https://picsum.photos/800/400?random=605' },
+  { id: '1', title: "Assassin's Creed Odyssey", hours: '29%', span: 'md:col-span-2 md:row-span-2', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_hero.jpg?t=1758656673' },
+  { id: '2', title: 'Counter-Strike 2', hours: '22%', span: 'md:col-span-1 md:row-span-2', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_hero.jpg?t=1749053861' },
+  { id: '3', title: 'Stellar Blade', hours: '6%', span: 'md:col-span-1 md:row-span-1', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3489700/7f886b630308135ac990fefd005787729fec685f/library_hero.jpg?t=1763566418' },
+  { id: '4', title: 'Lies of P', hours: '5%', span: 'md:col-span-1 md:row-span-1', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1627720/library_hero.jpg?t=1764565054' },
+  { id: '5', title: 'New Games', hours: '50', span: 'md:col-span-2 md:row-span-1', image: 'https://picsum.photos/800/400?random=605' },
 ];
 
 const STEAM_PURCHASED = [
-  { id: 'p1', title: 'God of War Ragnarok', image: 'https://picsum.photos/300/400?random=701' },
-  { id: 'p2', title: 'Starfield', image: 'https://picsum.photos/300/400?random=702' },
-  { id: 'p3', title: 'Armored Core VI', image: 'https://picsum.photos/300/400?random=703' },
-  { id: 'p4', title: 'Sea of Stars', image: 'https://picsum.photos/300/400?random=704' },
-  { id: 'p5', title: 'Final Fantasy XVI', image: 'https://picsum.photos/300/400?random=705' },
+  { id: 'p1', title: 'New Game 1', image: 'https://picsum.photos/300/400?random=701' },
+  { id: 'p2', title: 'New Game 2', image: 'https://picsum.photos/300/400?random=702' },
+  { id: 'p3', title: 'New Game 3', image: 'https://picsum.photos/300/400?random=703' },
+  { id: 'p4', title: 'New Game 4', image: 'https://picsum.photos/300/400?random=704' },
+  { id: 'p5', title: 'New Game 5', image: 'https://picsum.photos/300/400?random=705' },
 ];
 
 const STEAM_WISHLIST = [
@@ -103,47 +103,159 @@ const STEAM_WISHLIST = [
   { id: 'w3', title: 'Silksong', release: 'TBA', image: 'https://picsum.photos/300/200?random=803' },
 ];
 
-// --- DATA: COMPETITIVE MODULES (Fixed Order: DOTA2 -> CSGO -> LOLM -> 王者荣耀 -> LOL) ---
+// --- DATA: TIMELINE (2025) ---
+const TIMELINE_DATA = [
+  { 
+    month: 'JAN', 
+    year: '2025',
+    games: [
+      { id: 'jan1', pct: '68%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_600x900.jpg?t=1758656673' },
+      { id: 'jan2', pct: '23%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'jan3', pct: '5%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/570/7ec9618b56504ac86080167b3e79d7753760b736/library_capsule.jpg?t=1762820658' }
+    ]
+  },
+  { 
+    month: 'FEB', 
+    year: '2025',
+    games: [
+      { id: 'feb1', pct: '89%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_600x900.jpg?t=1758656673' },
+      { id: 'feb2', pct: '3%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1771300/library_600x900.jpg?t=1763987645' },
+      { id: 'feb3', pct: '2%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1145360/library_600x900.jpg?t=1758127023' }
+    ]
+  },
+  { 
+    month: 'MAR', 
+    year: '2025',
+    games: [
+      { id: 'mar1', pct: '32%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1545560/6c15b63a0e77398f55a4504553f4020f89fb5912/library_600x900_tchinese.jpg?t=1765536197' },
+      { id: 'mar2', pct: '22%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1677280/library_600x900.jpg?t=1764272700' },
+      { id: 'mar3', pct: '21%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/2169200/library_600x900.jpg?t=1765448187' }
+    ]
+  },
+  { 
+    month: 'APR', 
+    year: '2025',
+    games: [
+      { id: 'apr1', pct: '64%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'apr2', pct: '14%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1677280/library_600x900.jpg?t=1764272700' },
+      { id: 'apr3', pct: '9%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/2904000/d70cad8993e0fb2f0c59b0789649fc47bb61a229/library_capsule_tchinese.jpg?t=1765435157' }
+    ]
+  },
+  { 
+    month: 'MAY', 
+    year: '2025',
+    games: [
+      { id: 'may1', pct: '54%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'may2', pct: '17%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1244090/library_600x900_tchinese.jpg?t=1756414027' },
+      { id: 'may3', pct: '11%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3385670/d64e7b27aedd44cbab4cf3e409b73931c57ff51b/library_600x900.jpg?t=1746607469' }
+    ]
+  },
+  { 
+    month: 'JUN', 
+    year: '2025',
+    games: [
+      { id: 'jun1', pct: '31%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3489700/f33e11f3faa2d0e800102c8cc1046554d3edc5da/library_600x900_tchinese.jpg?t=1763566418' },
+      { id: 'jun2', pct: '31%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'jun3', pct: '27%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1627720/library_600x900.jpg?t=1764565054' }
+    ]
+  },
+  { 
+    month: 'JUL', 
+    year: '2025',
+    games: [
+      { id: 'jul1', pct: '34%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/2849080/library_600x900.jpg?t=1758894483' },
+      { id: 'jul2', pct: '22%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'jul3', pct: '19%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/570/7ec9618b56504ac86080167b3e79d7753760b736/library_capsule.jpg?t=1762820658' }
+    ]
+  },
+  { 
+    month: 'AUG', 
+    year: '2025',
+    games: [
+      { id: 'aug1', pct: '38%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1449850/c5042e7895b9bf0be053155c6f193ee2fabb87e8/library_capsule.jpg?t=1762309929' },
+      { id: 'aug2', pct: '27%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/367520/library_600x900.jpg?t=1764916620' },
+      { id: 'aug3', pct: '11%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/570/7ec9618b56504ac86080167b3e79d7753760b736/library_capsule.jpg?t=1762820658' }
+    ]
+  },
+  { 
+    month: 'SEP', 
+    year: '2025',
+    games: [
+      { id: 'sep1', pct: '28%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/2531310/aeac394b61ac94b5d4ea939351baf3943ac0b282/library_600x900.jpg?t=1750959180' },
+      { id: 'sep2', pct: '25%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/2877170/library_600x900_tchinese.jpg?t=1759550611' },
+      { id: 'sep3', pct: '24%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/570/7ec9618b56504ac86080167b3e79d7753760b736/library_capsule.jpg?t=1762820658' }
+    ]
+  },
+  { 
+    month: 'OCT', 
+    year: '2025',
+    games: [
+      { id: 'oct1', pct: '40%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1449850/c5042e7895b9bf0be053155c6f193ee2fabb87e8/library_capsule.jpg?t=1762309929' },
+      { id: 'oct2', pct: '29%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1938090/c4f9d839034e17c558abe7edcecfcf9649f4d24f/library_capsule_tchinese.jpg?t=1765921870' },
+      { id: 'oct3', pct: '12%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/259740/library_600x900.jpg?t=1640912498' }
+    ]
+  },
+  { 
+    month: 'NOV', 
+    year: '2025',
+    games: [
+      { id: 'nov1', pct: '26%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1449850/c5042e7895b9bf0be053155c6f193ee2fabb87e8/library_capsule.jpg?t=1762309929' },
+      { id: 'nov2', pct: '18%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_600x900.jpg?t=1749053861' },
+      { id: 'nov3', pct: '16%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1551360/library_600x900.jpg?t=1746471508' }
+    ]
+  },
+  { 
+    month: 'DEC', 
+    year: '2025',
+    games: [
+      { id: 'dec1', pct: '77%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1903340/7f720d0e68dad3f97b9d4289d228f622099906e3/library_600x900_tchinese.jpg?t=1765922192' },
+      { id: 'dec2', pct: '14%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1817230/library_600x900.jpg?t=1764916407' },
+      { id: 'dec3', pct: '3%', image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1283400/library_600x900.jpg?t=1764149288' }
+    ]
+  }
+];
+
+// --- DATA: COMPETITIVE MODULES ---
 const COMPETITIVE_GAMES = [
   { 
-    id: 'dota2', 
-    navLabel: 'DOTA2',
-    title: 'DOTA 2', 
-    subtitle: 'The Strategic Masterpiece',
-    desc: 'Defense of the Ancients. Where map control equals victory.', 
-    image: 'https://picsum.photos/1920/1080?random=dota2' 
+    id: 'ac_odyssey', 
+    navLabel: 'AC Odyssey',
+    title: "Assassin's Creed Odyssey", 
+    subtitle: 'Top Played',
+    desc: 'The most played game of 2025. 29% of total playtime dedicated to exploring Ancient Greece.', 
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/812140/library_hero.jpg?t=1758656673' 
   },
   { 
-    id: 'csgo', 
-    navLabel: 'CSGO',
-    title: 'CS:GO 2', 
-    subtitle: 'Tactical Precision',
-    desc: 'Counter-Strike. Pure aim, smoke lineups, and clutch defusals.', 
-    image: 'https://picsum.photos/1920/1080?random=csgo' 
+    id: 'cs2', 
+    navLabel: 'CS2',
+    title: 'Counter-Strike 2', 
+    subtitle: 'Competitive',
+    desc: 'The tactical shooter continues to dominate. 22% playtime with 383 sessions recorded.', 
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_hero.jpg?t=1749053861' 
   },
   { 
-    id: 'lolm', 
-    navLabel: 'LOLM',
-    title: 'Wild Rift', 
-    subtitle: 'League Mobile',
-    desc: 'The Rift in your pocket. Intense 15-minute battles.', 
-    image: 'https://picsum.photos/1920/1080?random=wildrift' 
+    id: 'stellar_blade', 
+    navLabel: 'Stellar Blade',
+    title: 'Stellar Blade', 
+    subtitle: 'New Release',
+    desc: 'A stunning new addition to the library. 6% playtime and 18 intense sessions.', 
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/3489700/7f886b630308135ac990fefd005787729fec685f/library_hero.jpg?t=1763566418' 
   },
   { 
-    id: 'kog', 
-    navLabel: '王者荣耀',
-    title: 'Honor of Kings', 
-    subtitle: '王者荣耀',
-    desc: 'The giant of mobile MOBA. Fast-paced teamfights.', 
-    image: 'https://picsum.photos/1920/1080?random=kog' 
+    id: 'lies_of_p', 
+    navLabel: 'Lies of P',
+    title: 'Lies of P', 
+    subtitle: 'Soulslike',
+    desc: 'Mastering the puppet strings. 5% playtime and 10 sessions of challenge.', 
+    image: 'https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/1627720/library_hero.jpg?t=1764565054' 
   },
   { 
-    id: 'lol', 
-    navLabel: 'LOL',
-    title: 'League of Legends', 
-    subtitle: 'Summoner\'s Rift',
-    desc: 'The global phenomenon. A decade of dominance.', 
-    image: 'https://picsum.photos/1920/1080?random=lolpc' 
+    id: 'summary', 
+    navLabel: 'Summary',
+    title: '2025 Summary', 
+    subtitle: 'Year In Review',
+    desc: '76 Games Played. 390 Achievements Unlocked. A year of incredible gaming moments.', 
+    image: 'https://store.st.dl.eccdnx.com/public/images/yearinreview/bg_2023.svg' 
   },
 ];
 
@@ -222,9 +334,9 @@ const DashboardSubSection: React.FC = () => {
       <div className="absolute top-0 left-0 w-full z-40 px-6 md:px-10 pt-24 pb-4 pointer-events-none">
         <div>
            <h2 className="text-3xl md:text-5xl font-display font-bold text-white">
-              Section 5: <span className="text-emerald-400">Gaming Ledger</span>
+              Section 5: <span className="text-emerald-400">Steam Replay</span>
            </h2>
-           <p className="text-slate-400 mt-2 text-sm md:text-base">GameFi Protocol & Steam Stats • 2025</p>
+           <p className="text-slate-400 mt-2 text-sm md:text-base">Year In Review • High Ground No.1 Breaker • 2025</p>
         </div>
       </div>
 
@@ -232,12 +344,12 @@ const DashboardSubSection: React.FC = () => {
          <div>
             <div className="flex items-center gap-2 text-emerald-400 mb-2">
                <Hexagon size={16} fill="currentColor" className="opacity-50" />
-               <span className="text-xs font-mono tracking-[0.2em] uppercase">GameFi Protocol // 2025</span>
+               <span className="text-xs font-mono tracking-[0.2em] uppercase">Steam Annual Summary // 2025</span>
             </div>
          </div>
          <div className="mt-4 md:mt-0 text-right">
-            <div className="text-3xl font-mono font-bold text-white">$5,670<span className="text-emerald-500/50 text-xl">.00</span></div>
-            <div className="text-xs text-emerald-400/60 uppercase tracking-widest">Total Value Locked (Assets)</div>
+            <div className="text-3xl font-mono font-bold text-white">76<span className="text-emerald-500/50 text-xl"> Games</span></div>
+            <div className="text-xs text-emerald-400/60 uppercase tracking-widest">Library Size</div>
          </div>
       </div>
 
@@ -253,13 +365,13 @@ const DashboardSubSection: React.FC = () => {
                      <div className="w-2 h-2 rounded-full bg-emerald-500/40"></div>
                   </div>
                   <div className="flex-1 p-4 relative">
-                     <div className="absolute inset-0 bg-[url('https://picsum.photos/600/400?random=99')] bg-cover opacity-20 grayscale mix-blend-luminosity"></div>
+                     <div className="absolute inset-0 bg-[url('https://shared.st.dl.eccdnx.com//store_item_assets/steam/apps/730/library_hero.jpg?t=1749053861')] bg-cover opacity-20 grayscale mix-blend-luminosity"></div>
                      <div className="relative z-10">
-                        <div className="text-xs text-emerald-400 font-mono mb-1">RUNNING: STEAM_CLIENT</div>
-                        <div className="text-2xl font-bold text-white">CS:GO 2</div>
+                        <div className="text-xs text-emerald-400 font-mono mb-1">STATUS: ONLINE</div>
+                        <div className="text-2xl font-bold text-white">Steam Replay</div>
                         <div className="flex items-center gap-2 mt-2">
-                           <div className="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded">FPS: 240</div>
-                           <div className="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded">PING: 12ms</div>
+                           <div className="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded">GAMES: 76</div>
+                           <div className="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded">NEW: 50</div>
                         </div>
                      </div>
                   </div>
@@ -267,9 +379,9 @@ const DashboardSubSection: React.FC = () => {
                {/* Mobile */}
                <div ref={mobileRef} className="absolute bottom-0 right-10 w-[100px] h-[180px] bg-black rounded-[14px] border-2 border-emerald-500/50 shadow-2xl flex flex-col overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                    <div className="h-full w-full bg-emerald-900 relative">
-                      <img src="https://picsum.photos/200/400?random=98" className="w-full h-full object-cover opacity-40 grayscale" />
+                      <img src="https://store.st.dl.eccdnx.com/public/images/yearinreview/bg_2023.svg" className="w-full h-full object-cover opacity-40 grayscale" />
                       <div className="absolute bottom-4 left-0 w-full text-center">
-                         <div className="text-[10px] font-bold text-white">WILD RIFT</div>
+                         <div className="text-[10px] font-bold text-white">MOBILE</div>
                          <div className="flex justify-center mt-1">
                             <Wifi size={10} className="text-emerald-400" />
                          </div>
@@ -283,18 +395,18 @@ const DashboardSubSection: React.FC = () => {
                <div className="bg-emerald-900/20 border border-emerald-500/20 p-4 rounded-xl backdrop-blur-sm hover:bg-emerald-800/20 transition-colors">
                   <div className="flex items-center justify-between mb-2">
                      <Activity size={18} className="text-emerald-400" />
-                     <span className="text-[10px] font-mono text-emerald-500/60">METRIC_01</span>
+                     <span className="text-[10px] font-mono text-emerald-500/60">ACHIEVEMENTS</span>
                   </div>
-                  <div className="text-2xl font-bold text-white">12,420</div>
-                  <div className="text-xs text-emerald-400/60">Total Hours Played</div>
+                  <div className="text-2xl font-bold text-white">390</div>
+                  <div className="text-xs text-emerald-400/60">Unlocked Total</div>
                </div>
                <div className="bg-emerald-900/20 border border-emerald-500/20 p-4 rounded-xl backdrop-blur-sm hover:bg-emerald-800/20 transition-colors">
                   <div className="flex items-center justify-between mb-2">
                      <Trophy size={18} className="text-emerald-400" />
-                     <span className="text-[10px] font-mono text-emerald-500/60">METRIC_02</span>
+                     <span className="text-[10px] font-mono text-emerald-500/60">GROWTH</span>
                   </div>
-                  <div className="text-2xl font-bold text-white">Top 1%</div>
-                  <div className="text-xs text-emerald-400/60">Global Ranking</div>
+                  <div className="text-2xl font-bold text-white">+12</div>
+                  <div className="text-xs text-emerald-400/60">Games vs 2024</div>
                </div>
             </div>
          </div>
@@ -310,7 +422,7 @@ const DashboardSubSection: React.FC = () => {
                   <div className="relative z-10 p-6 h-full flex flex-col">
                      <div className="flex justify-between items-start mb-4">
                         <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
-                           {game.id === 'lolm' ? <Smartphone size={20} /> : game.id === 'csgo2' ? <Crosshair size={20} /> : game.id === 'dota2' ? <Sword size={20} /> : <Target size={20} />}
+                           {game.icon}
                         </div>
                         <div className="flex gap-2">
                            {game.tags.map(tag => (
@@ -322,12 +434,12 @@ const DashboardSubSection: React.FC = () => {
                      <div className="text-xs text-emerald-500/60 font-mono mb-6">{game.platform.toUpperCase()} CLIENT</div>
                      <div className="mt-auto grid grid-cols-2 gap-4 border-t border-emerald-500/20 pt-4">
                         <div>
-                           <div className="text-[10px] text-emerald-500/60 uppercase">Rank</div>
+                           <div className="text-[10px] text-emerald-500/60 uppercase">Genre</div>
                            <div className="font-mono font-bold text-white">{game.rank}</div>
                         </div>
                         <div className="text-right">
-                           <div className="text-[10px] text-emerald-500/60 uppercase">Invested</div>
-                           <div className="font-mono font-bold text-emerald-400">{game.spent}</div>
+                           <div className="text-[10px] text-emerald-500/60 uppercase">Playtime/Sessions</div>
+                           <div className="font-mono font-bold text-emerald-400">{game.hours} / {game.spent}</div>
                         </div>
                      </div>
                   </div>
@@ -477,17 +589,17 @@ const GallerySubSection: React.FC = () => {
        >
           <div className="max-w-lg">
              <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 rounded-full">
-                In-Game Photography
+                2025 Highlights
              </div>
              <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                Freezing <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Time</span>
+                Epic <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Moments</span>
              </h2>
              <p className="text-xl text-slate-400 leading-relaxed mb-8 font-serif italic">
-                "The world moves fast. Sometimes you have to pause the simulation, align the camera, and capture the ghost in the machine."
+                "From the ancient lands of Greece to the futuristic battles of Stellar Blade. Every game was a new adventure."
              </p>
              
              <button className="mt-10 px-8 py-3 bg-emerald-500 text-black font-bold rounded-full hover:bg-emerald-400 transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                <span>View Full Gallery</span> <Maximize2 size={16} className="group-hover:scale-110 transition-transform"/>
+                <span>View Full Library</span> <Maximize2 size={16} className="group-hover:scale-110 transition-transform"/>
              </button>
           </div>
        </div>
@@ -529,7 +641,7 @@ const SteamSubSection: React.FC = () => {
                         <img src={game.image} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 scale-100 group-hover:scale-105" alt={game.title} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                         <div className="absolute bottom-0 left-0 p-4 w-full">
-                           <div className="text-2xl font-bold font-display leading-none mb-1">{game.hours}h</div>
+                           <div className="text-2xl font-bold font-display leading-none mb-1">{game.hours}</div>
                            <div className="text-sm text-slate-300 font-medium truncate">{game.title}</div>
                         </div>
                      </div>
@@ -583,6 +695,110 @@ const SteamSubSection: React.FC = () => {
 }
 
 // ==========================================
+// SUB-COMPONENT: TIMELINE (Scroll Triggered)
+// ==========================================
+const TimelineSubSection: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = window.gsap.context(() => {
+      // 1. Line Animation (Grow Downwards)
+      window.gsap.from('.timeline-line', {
+        height: 0,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 60%",
+          end: "bottom 80%",
+          scrub: 1
+        }
+      });
+
+      // 2. Nodes Animation
+      const nodes = window.gsap.utils.toArray('.timeline-node');
+      nodes.forEach((node: any) => {
+        window.gsap.from(node, {
+           scale: 0,
+           opacity: 0,
+           duration: 0.5,
+           scrollTrigger: {
+              trigger: node,
+              start: "top 80%",
+              toggleActions: "play none none reverse"
+           }
+        });
+      });
+
+      // 3. Content Animation
+      const items = window.gsap.utils.toArray('.timeline-item');
+      items.forEach((item: any) => {
+        window.gsap.from(item, {
+           y: 50,
+           opacity: 0,
+           duration: 0.8,
+           scrollTrigger: {
+              trigger: item,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+           }
+        });
+      });
+
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative w-full py-32 bg-[#020617] text-white overflow-hidden">
+       {/* Background Elements */}
+       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-emerald-500/20 timeline-line"></div>
+
+       <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-24">
+             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">2025 Timeline</h2>
+             <p className="text-slate-400">A Month-by-Month Journey Through the Year</p>
+          </div>
+
+          <div className="flex flex-col gap-24">
+             {TIMELINE_DATA.map((item, index) => (
+                <div key={item.month} className={`timeline-item flex items-center justify-between gap-10 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                   
+                   {/* Month Content */}
+                   <div className={`w-1/2 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className="text-6xl font-black text-emerald-500/10 absolute -mt-10 select-none pointer-events-none transform scale-150 origin-center opacity-50">
+                         {item.month}
+                      </div>
+                      <div className="relative z-10">
+                         <h3 className="text-4xl font-display font-bold text-white mb-2">{item.month}</h3>
+                         <div className="text-emerald-400 font-mono text-sm mb-6">{item.year}</div>
+                         
+                         <div className={`flex gap-4 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                            {item.games.map((game) => (
+                               <div key={game.id} className="group relative w-20 md:w-24 aspect-[2/3] rounded-lg overflow-hidden border border-white/10 hover:border-emerald-400 hover:scale-110 transition-all cursor-pointer shadow-lg bg-slate-900">
+                                  <img src={game.image} className="w-full h-full object-cover" alt={item.month} />
+                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+                                  <div className="absolute bottom-0 left-0 w-full bg-black/80 text-center py-1 text-[10px] font-bold text-emerald-400">
+                                     {game.pct}
+                                  </div>
+                               </div>
+                            ))}
+                         </div>
+                      </div>
+                   </div>
+
+                   {/* Center Node */}
+                   <div className="timeline-node relative z-20 flex-shrink-0 w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.5)] border-4 border-[#020617]"></div>
+
+                   {/* Empty Space for Alternating Layout */}
+                   <div className="w-1/2"></div>
+                </div>
+             ))}
+          </div>
+       </div>
+    </div>
+  );
+};
+
+// ==========================================
 // SUB-COMPONENT: VERTICAL GAME SCROLL (REPLACES SLIDER)
 // ==========================================
 const VerticalGameScroll: React.FC = () => {
@@ -619,7 +835,7 @@ const VerticalGameScroll: React.FC = () => {
          
          {/* Background Title (Fixed) */}
          <div className="absolute top-10 left-10 z-10 pointer-events-none">
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white/10">COMPETITIVE<br/>ARENAS</h2>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white/10">STEAM<br/>REPLAY</h2>
          </div>
 
          {/* --- SIDE NAVIGATION (l-side-nav) --- */}
@@ -684,7 +900,7 @@ const VerticalGameScroll: React.FC = () => {
                            </p>
                            
                            <button className="cta group px-8 py-4 bg-emerald-500 text-black font-bold rounded-full hover:bg-white transition-all flex items-center gap-3">
-                              <span>View Match History</span>
+                              <span>View Stats</span>
                               <MousePointer2 size={18} className="group-hover:translate-x-1 transition-transform" />
                               <span className="btn-background"></span>
                            </button>
@@ -778,6 +994,7 @@ const GamingSection: React.FC = () => {
       <DashboardSubSection />
       <GallerySubSection />
       <SteamSubSection />
+      <TimelineSubSection />
       <VerticalGameScroll />
       <SquadUpSubSection />
     </div>

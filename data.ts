@@ -67,10 +67,37 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
 ];
 
 export const STAT_CARDS: StatCard[] = [
-  { id: '1', label: 'Books Read', value: 24, trend: '+5 from 2024', color: 'bg-amber-100 text-amber-900' },
-  { id: '2', label: 'Cities Visited', value: 7, trend: 'Global Citizen', color: 'bg-sky-100 text-sky-900' },
-  { id: '3', label: 'Code Commits', value: '1,240', color: 'bg-emerald-100 text-emerald-900' },
-  { id: '4', label: 'Coffee Cups', value: 680, trend: 'Caffeine Fueled', color: 'bg-stone-100 text-stone-900' },
+  { 
+    id: '1', 
+    label: 'Books Read', 
+    value: 24, 
+    trend: '+5 from 2024', 
+    color: 'bg-amber-100 text-amber-900',
+    details: 'Sci-Fi: 10, Bio: 5, Tech: 9. Favorite: "Project Hail Mary".'
+  },
+  { 
+    id: '2', 
+    label: 'Cities Visited', 
+    value: 7, 
+    trend: 'Global Citizen', 
+    color: 'bg-sky-100 text-sky-900',
+    details: 'Kyoto, Tokyo, Osaka, London, Paris, New York, Seattle.'
+  },
+  { 
+    id: '3', 
+    label: 'Code Commits', 
+    value: '1,240', 
+    color: 'bg-emerald-100 text-emerald-900',
+    details: 'Mainly React & Python. 3 Major projects shipped. 120 PRs reviewed.'
+  },
+  { 
+    id: '4', 
+    label: 'Coffee Cups', 
+    value: 680, 
+    trend: 'Caffeine Fueled', 
+    color: 'bg-stone-100 text-stone-900',
+    details: 'Average 1.8 cups/day. Top beans: Ethiopian Yirgacheffe.'
+  },
 ];
 
 export const MEMORY_IMAGES: ImageMemory[] = [

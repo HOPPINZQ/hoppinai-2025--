@@ -21,8 +21,18 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
   const progressBarRef = useRef<HTMLDivElement>(null);
   
   const [isMobile, setIsMobile] = useState(false);
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
 
-  // Detect mobile
+  // Memoize card positions to prevent re-calculation on render
+  const cardsWithPositions = React.useMemo(() => {
+    return stats.map((stat, i) => ({
+      ...stat,
+      offsetX: (i % 2 === 0 ? -1 : 1) * (200 + Math.random() * 150),
+      offsetY: (i < 2 ? -1 : 1) * (150 + Math.random() * 100),
+      rotation: Math.random() * 10 - 5
+    }));
+  }, [stats]);
+
   useLayoutEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -131,25 +141,36 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
 
       // Expand AI Text
       timeline.to(aiTextRef.current, {
-         scale: 50,
-         filter: 'blur(2px)',
+         scale: 15, // Reduced from 50 to avoid fullscreen overwhelm
          duration: 2.5,
-         ease: "power2.in"
+         ease: "power2.inOut"
       }, 2.5);
 
-      // Text turns to light
-      timeline.to('.ai-text-gradient', {
-         backgroundImage: 'linear-gradient(to right, #ffffff, #ffffff)',
+      // Text turns to light (Fade in white overlay)
+      timeline.to('.ai-text-white', {
+         opacity: 1,
          duration: 1.5
-      }, 3);
+      }, 2.5);
+
+      // Fade out at the end to prepare for next section
+      timeline.to(aiTextRef.current, {
+         opacity: 0,
+         filter: 'blur(10px)', // Gentle exit blur
+         duration: 1
+      }, 4);
       
     }, containerRef);
 
     return () => ctx.revert();
   }, [isMobile]);
 
+  // Removed handleMouseMove as parallax is disabled
+
   return (
-    <div ref={containerRef} className="relative w-full h-screen overflow-hidden text-white"> 
+    <div 
+        ref={containerRef} 
+        className="relative w-full h-screen overflow-hidden text-white"
+    > 
       {/* Removed the opaque gradient background so SnakeBackground (z-0) is visible */}
       <div ref={contentRef} className="absolute inset-0 w-full h-full">
         
@@ -186,7 +207,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
                   return (
                      <div 
                         key={img.id}
-                        className="absolute shadow-2xl rounded-lg overflow-hidden border-2 border-white/20 transform hover:scale-110"
+                        className="absolute shadow-2xl rounded-lg overflow-hidden border-2 border-white/20 transform hover:scale-110 transition-transform duration-300"
                         style={{
                            top: `${randomTop}%`,
                            left: `${randomLeft}%`,
@@ -200,22 +221,55 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
                })}
             </div>
 
-            {/* Info Cards */}
+            {/* Info Cards - MODIFIED SECTION */}
             <div ref={cardsRef} className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
-               {stats.map((stat, i) => {
-                   const offsetX = (i % 2 === 0 ? -1 : 1) * (200 + Math.random() * 150);
-                   const offsetY = (i < 2 ? -1 : 1) * (150 + Math.random() * 100);
+               {cardsWithPositions.map((stat, i) => {
+                   const isActive = activeCardId === stat.id;
+                   
                    return (
                       <div 
                         key={stat.id}
-                        className={`absolute p-4 md:p-6 rounded-2xl shadow-2xl backdrop-blur-xl bg-slate-900/60 border border-white/10 w-40 md:w-48 text-white`}
+                        className="absolute pointer-events-auto flex justify-center items-center"
                         style={{
-                           transform: `translate(${offsetX}px, ${offsetY}px) rotate(${Math.random() * 10 - 5}deg)`
+                           transform: `translate(${stat.offsetX}px, ${stat.offsetY}px) rotate(${stat.rotation}deg)`
                         }}
                       >
-                         <div className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{stat.value}</div>
-                         <div className="text-xs md:text-sm font-medium uppercase tracking-wider text-slate-400">{stat.label}</div>
-                         {stat.trend && <div className="text-xs mt-2 font-bold text-green-400">{stat.trend}</div>}
+                         {/* Float Animation Wrapper (CSS) */}
+                         <div className={i % 2 === 0 ? "animate-float-gentle" : "animate-float-shake"}>
+                             
+                             {/* Parallax Wrapper REMOVED (Keep structure for stability) */}
+                             <div>
+                                 {/* Card Content (Accordion) */}
+                                 <div 
+                                    onMouseEnter={() => setActiveCardId(stat.id)}
+                                    onMouseLeave={() => setActiveCardId(null)}
+                                    className={`
+                                       relative overflow-hidden transition-all duration-300 ease-out cursor-pointer
+                                       ${isActive ? 'w-80 z-50 scale-110 bg-slate-800/90' : 'w-40 md:w-48 h-32 bg-slate-900/60'}
+                                       rounded-2xl shadow-2xl backdrop-blur-xl border border-white/10 text-white
+                                       flex flex-col
+                                       p-4 md:p-6
+                                    `}
+                                 >
+                                    <div className="flex-shrink-0">
+                                        <div className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{stat.value}</div>
+                                        <div className="text-xs md:text-sm font-medium uppercase tracking-wider text-slate-400">{stat.label}</div>
+                                        {stat.trend && <div className="text-xs mt-2 font-bold text-green-400">{stat.trend}</div>}
+                                    </div>
+                                    
+                                    {/* Expanded Details */}
+                                    <div 
+                                        className={`
+                                            mt-4 pt-4 border-t border-white/10 text-xs text-slate-300 leading-relaxed
+                                            transition-all duration-500 ease-in-out
+                                            ${isActive ? 'opacity-100 max-h-40 translate-y-0' : 'opacity-0 max-h-0 translate-y-4'}
+                                        `}
+                                    >
+                                        {stat.details || "More details coming soon..."}
+                                    </div>
+                                 </div>
+                             </div>
+                         </div>
                       </div>
                    );
                })}
@@ -232,10 +286,15 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ images, stats, onComple
             </div>
 
             {/* AI Text (Hidden initially) */}
-            <div ref={aiTextRef} className="absolute z-30 opacity-0 pointer-events-none flex items-center justify-center">
-               <span className="ai-text-gradient font-display font-black text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 filter drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">
-                 AI
-               </span>
+            <div ref={aiTextRef} className="absolute z-30 opacity-0 pointer-events-none flex items-center justify-center will-change-transform">
+               <div className="relative">
+                  <span className="ai-text-gradient font-display font-black text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 filter drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">
+                    AI
+                  </span>
+                  <span className="ai-text-white absolute inset-0 font-display font-black text-8xl md:text-9xl text-white opacity-0 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                    AI
+                  </span>
+               </div>
             </div>
             
         </div>

@@ -19,6 +19,7 @@ export interface StatCard {
   value: string | number;
   trend?: string;
   color: string;
+  details?: string;
 }
 
 export interface ImageMemory {

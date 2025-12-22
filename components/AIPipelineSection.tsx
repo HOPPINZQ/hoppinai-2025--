@@ -31,6 +31,25 @@ const AIPipelineSection: React.FC = () => {
   const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
   const chatBubblesRef = useRef<(HTMLDivElement | null)[]>([]);
 
+  // Generate stable random particles to prevent hydration mismatch and re-render jumps
+  const particles = React.useMemo(() => {
+     return [...Array(40)].map((_, i) => ({
+        id: i,
+        className: `absolute rounded-[1px] backdrop-blur-[1px] ${
+           i % 3 === 0 ? 'bg-purple-500/40' : i % 3 === 1 ? 'bg-blue-500/40' : 'bg-emerald-500/40'
+        }`,
+        style: {
+           width: Math.random() * 20 + 2 + 'px',
+           height: Math.random() * 20 + 2 + 'px',
+           left: Math.random() * 100 + '%',
+           top: Math.random() * 100 + '%',
+           border: Math.random() > 0.7 ? '1px solid rgba(255,255,255,0.15)' : 'none',
+           boxShadow: Math.random() > 0.8 ? '0 0 10px rgba(255,255,255,0.2)' : 'none',
+           opacity: Math.random() * 0.5 + 0.3
+        }
+     }));
+  }, []);
+
   useLayoutEffect(() => {
     const ctx = window.gsap.context(() => {
       window.gsap.registerPlugin(window.ScrollTrigger);
@@ -276,19 +295,12 @@ const AIPipelineSection: React.FC = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
       
       {/* Background Particles Container */}
-      <div ref={bgParticlesRef} className="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
-         {[...Array(40)].map((_, i) => (
+      <div ref={bgParticlesRef} className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+         {particles.map((p) => (
             <div 
-               key={i} 
-               className={`absolute rounded-[1px] backdrop-blur-[1px] ${
-                  i % 3 === 0 ? 'bg-purple-500/40' : i % 3 === 1 ? 'bg-blue-500/40' : 'bg-emerald-500/40'
-               }`}
-               style={{
-                  width: Math.random() * 20 + 2 + 'px',
-                  height: Math.random() * 20 + 2 + 'px',
-                  border: Math.random() > 0.7 ? '1px solid rgba(255,255,255,0.15)' : 'none',
-                  boxShadow: Math.random() > 0.8 ? '0 0 10px rgba(255,255,255,0.2)' : 'none'
-               }}
+               key={p.id} 
+               className={p.className}
+               style={p.style}
             />
          ))}
       </div>

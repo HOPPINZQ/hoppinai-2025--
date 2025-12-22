@@ -1,13 +1,13 @@
 import React from 'react';
 import IntroAnimation from './components/IntroAnimation';
+import ExpandingGallerySection from './components/ExpandingGallerySection';
 import TimelineSection from './components/TimelineSection';
 import AIPipelineSection from './components/AIPipelineSection';
 import MusicSection from './components/MusicSection';
 import GamingSection from './components/GamingSection';
 import PhotoWallSection from './components/PhotoWallSection'; 
-import StrangeLoopSection from './components/StrangeLoopSection'; 
 import SnakeBackground from './components/SnakeBackground';
-import ScrollProgress from './components/ScrollProgress';
+import ScrollIsland from './components/ScrollIsland';
 import Header from './components/Header';
 import { MEMORY_IMAGES, STAT_CARDS, TIMELINE_EVENTS } from './data';
 
@@ -21,8 +21,8 @@ const App: React.FC = () => {
       {/* Background Layer: Fixed Z-0 */}
       <SnakeBackground />
       
-      {/* Floating UI: Z-50 */}
-      <ScrollProgress />
+      {/* Floating UI: Z-50 (Integrated into Header) */}
+      {/* <ScrollIsland /> */}
 
       {/* Main Content: Z-10 */}
       <div className="relative z-10">
@@ -32,6 +32,11 @@ const App: React.FC = () => {
           stats={STAT_CARDS} 
           onComplete={() => {}} 
         />
+
+        {/* Expanding Gallery Section */}
+        <div id="expanding-gallery" className="relative">
+          <ExpandingGallerySection />
+        </div>
         
         <div id="timeline" className="relative">
           <TimelineSection events={TIMELINE_EVENTS} />
@@ -55,11 +60,6 @@ const App: React.FC = () => {
         {/* Gaming Section */}
         <div id="gaming" className="relative">
            <GamingSection />
-        </div>
-
-        {/* Strange Loop Section */}
-        <div id="loop" className="relative">
-           <StrangeLoopSection />
         </div>
 
       </div>
