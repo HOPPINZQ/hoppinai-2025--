@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Menu, X } from 'lucide-react';
+import ScrollIsland from './ScrollIsland';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,15 +39,9 @@ const Header: React.FC = () => {
           </h1>
         </div>
 
-        {/* 2. Menu Button (Top Center) */}
-        <div className="absolute left-1/2 -translate-x-1/2 pointer-events-auto">
-           <button 
-             onClick={() => setIsMenuOpen(!isMenuOpen)}
-             className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all group shadow-lg"
-           >
-              <span className="text-xs font-bold uppercase tracking-widest hidden md:block text-slate-200 group-hover:text-white">Menu</span>
-              <Menu size={16} className={`text-slate-200 group-hover:text-white transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`} />
-           </button>
+        {/* 2. Scroll Island (Center - Replaces Menu Button) */}
+        <div className="pointer-events-auto">
+           <ScrollIsland isMenuOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
         </div>
 
         {/* 3. Search (Top Right) */}
